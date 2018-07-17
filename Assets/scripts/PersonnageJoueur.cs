@@ -9,12 +9,26 @@ public class PersonnageJoueur : MonoBehaviour
 
     #endregion
 
-#region Variables (private)
-                                                                 
-                                                                 
-                                                                 
-    #endregion                                                   
-                                                                 
-                                                                 
+    #region Variables (private)
+
+
+
+    #endregion
+
+
+    private void Update()
+    {
+        
+    }
+
+    private void mouvpersonnage()
+    {
+
+    }
+        
+
+
+
+
 }                                                                
-                                                                 
+     
