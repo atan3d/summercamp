@@ -5,6 +5,7 @@ public class PersonnageJoueur : MonoBehaviour
 {
     #region Variables (public)
 
+    public Transform m_pCameraTransform = null;
     public Rigidbody m_pRigidbody = null;
 
    public int m_iHp = 100;
@@ -34,9 +35,13 @@ public class PersonnageJoueur : MonoBehaviour
         Vector3 tDirection = new Vector3(FHorizontal, 0.0f, FVertical);
 
         if (tDirection != Vector3.zero)
+
+         
         {
 
             tDirection.Normalize();
+
+           tDirection = m_pCameraTransform.TransformDirection(tDirection);
 
             Vector3 tDeplacement = tDirection * (m_fVitesse * Time.deltaTime); // deplacement de 1 en profondeur
             m_pRigidbody.MovePosition(transform.position + tDeplacement);
@@ -54,4 +59,5 @@ public class PersonnageJoueur : MonoBehaviour
             m_pRigidbody.AddForce(tsaut, ForceMode.Impulse);
         }
     }
+
 }                                                               
