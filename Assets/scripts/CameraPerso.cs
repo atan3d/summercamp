@@ -5,6 +5,8 @@ public class CameraPerso : MonoBehaviour
 {
     #region Variables (public)
 
+    static public CameraPerso Instance = null;
+
     public float m_FDistanceDeSuivi = 0.0f;
     public float m_fVitesseDeRotation = 0.0f;                                                                
 
@@ -17,6 +19,27 @@ public class CameraPerso : MonoBehaviour
 
 
     #endregion
+
+
+    private void Awake()
+    {
+        
+
+        if (CameraPerso.Instance != null)
+        {
+            if (CameraPerso.Instance != this);
+            Destroy(this);
+
+            Debug.LogError("Attention, il a deux CameraPerso dans la meme scene");
+
+            return;
+        }
+
+        CameraPerso.Instance = this;
+
+     
+
+    }
 
     private void LateUpdate()
     {
