@@ -5,12 +5,9 @@ public class PersonnageJoueur : MonoBehaviour
 {
     #region Variables (public)
 
-
-
-    
-
-    public Transform m_pCameraTransform = null;
     public Rigidbody m_pRigidbody = null;
+
+    public Arme m_pArme = null;
 
    public int m_iHp = 100;
 
@@ -28,6 +25,7 @@ public class PersonnageJoueur : MonoBehaviour
 
     private void Update()
     {
+        Attaquer();
         MovePersonnage();
         Jump();
     }
@@ -42,7 +40,7 @@ public class PersonnageJoueur : MonoBehaviour
         if (tDirection != Vector3.zero)         
         {
 
-           tDirection = m_pCameraTransform.TransformDirection(tDirection);
+           tDirection = CameraPerso.Instance.transform.TransformDirection(tDirection);
             tDirection.y = 0.0f;
 
             if (tDirection.sqrMagnitude != 0.0f)
@@ -65,6 +63,18 @@ public class PersonnageJoueur : MonoBehaviour
         {
             Vector3 tsaut = Vector3.up * (m_fVitesseDeSaut);
             m_pRigidbody.AddForce(tsaut, ForceMode.Impulse);
+        
+        }
+    }
+
+
+    private void Attaquer()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            m_pArme.Attaquer();
+        
+
         }
     }
 

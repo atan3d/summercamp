@@ -1,9 +1,14 @@
 ﻿
 using UnityEngine;
 
-public class ArmeADistance : MonoBehaviour
+public class ArmeADistance : Arme
 {
-#region Variables (public)
+    #region Variables (public)
+
+    public GameObject m_pPrefabDeProjectile = null;
+
+    public Transform m_pOrigineDeTir;
+
 
 
 
@@ -14,6 +19,13 @@ public class ArmeADistance : MonoBehaviour
 
 
     #endregion
+
+
+
+     override public void Attaquer()
+    {
+        Instantiate(m_pPrefabDeProjectile, m_pOrigineDeTir.position, m_pOrigineDeTir.rotation);
+    }
 
 
 }
