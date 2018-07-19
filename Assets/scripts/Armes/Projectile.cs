@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider pCollider)
     {
-        if (pCollider.gameObject.layer != LayerMask.GetMask("Attaque") && pCollider.gameObject.layer != LayerMask.GetMask("sol"))
+        if (pCollider.gameObject.layer != LayerMask.NameToLayer("Attaque") && pCollider.gameObject.layer != LayerMask.NameToLayer("sol"))
            Destroy(gameObject);
     }
 
