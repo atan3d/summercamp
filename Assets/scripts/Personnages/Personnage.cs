@@ -8,6 +8,8 @@ abstract public class Personnage : MonoBehaviour
 
     public Arme m_pArme = null;
 
+    public Animator m_pAnimator = null;
+
     public int m_iHp = 100;
 
     public float m_fVitesse = 10.0f;

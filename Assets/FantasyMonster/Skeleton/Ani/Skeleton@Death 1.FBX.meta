@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5a35c5f0a89b9654d897ccd7c8f81bd0
+guid: e5a60500f90fe4449a5386fd8ab15fe6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -83,17 +83,14 @@ ModelImporter:
     400074: Object01
     400076: Object02
     400078: //RootNode
+    2100000: defaultsds
     4300000: Object02
     4300002: Object01
+    7400000: Take 001
     9500000: //RootNode
     13700000: Object01
     13700002: Object02
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: defaultsds
-    second: {fileID: 2100000, guid: b1494958bf9856a479bec1767c02878e, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -121,16 +118,16 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -138,19 +135,19 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
-    previousCalculatedGlobalScale: 0.3
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
-    normalCalculationMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -168,11 +165,11 @@ ModelImporter:
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
-  additionalBone: 1
+  additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

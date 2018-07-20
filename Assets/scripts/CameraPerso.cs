@@ -8,7 +8,9 @@ public class CameraPerso : MonoBehaviour
     static public CameraPerso Instance = null;
 
     public float m_FDistanceDeSuivi = 0.0f;
-    public float m_fVitesseDeRotation = 0.0f;                                                                
+    public float m_fVitesseDeRotation = 0.0f;
+    public Camera m_pCamera = null;
+
 
     #endregion
 

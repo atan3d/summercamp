@@ -7,6 +7,7 @@ public class PersonnageJoueur : Personnage
 
     public Rigidbody m_pRigidbody = null;
 
+
     public float m_fVitesseDeSaut = 1.0f;
     #endregion
 
@@ -20,9 +21,9 @@ public class PersonnageJoueur : Personnage
 
     private void Update()
     {
-        Attaquer();
         MovePersonnage();
         Jump();
+        Attaquer();
     }
 
     override protected void MovePersonnage()
@@ -67,8 +68,24 @@ public class PersonnageJoueur : Personnage
     {
         if (Input.GetButton("Fire1"))
         {
+          Vector3 tDirectionDattaque = Input.mousePosition;
+
+            tDirectionDattaque.x /= Screen.width;
+            tDirectionDattaque.y /= Screen.height;
+
+            tDirectionDattaque -= new Vector3(0.5f, 0.5f, 0.0f); //on le prend par rapport au centre de l ecran (donc (x=0.5, y=0.5))
+
+            tDirectionDattaque.z = tDirectionDattaque.y;
+            tDirectionDattaque.y = 0.0f;
+
+            tDirectionDattaque = CameraPerso.Instance.transform.TransformDirection(tDirectionDattaque);
+            tDirectionDattaque.y = 0.0f;
+
+
+            if(tDirectionDattaque != Vector3.zero)
+            transform.forward = tDirectionDattaque.normalized;
+
             m_pArme.Attaquer();
-        
 
         }
     }
