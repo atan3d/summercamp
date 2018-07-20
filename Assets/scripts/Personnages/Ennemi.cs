@@ -9,6 +9,7 @@ public class Ennemi : Personnage
     public Personnage m_pCible = null;
 
     public NavMeshAgent m_pNavMeshAgent = null;
+  
 
     public float m_fDistanceDarret;
 
@@ -63,13 +64,15 @@ public class Ennemi : Personnage
 
     protected override void MovePersonnage()
     {
-        Vector3 tDestination = m_pCible.transform.position;
+        Vector3 tDirection = (m_pCible.transform.position - transform.position).normalized;
 
             RaycastHit tHit;
 
-     if  ( Physics.Raycast(transform.position + Vector3.up,(tDestination - transform.position).normalized, out tHit, 300.0f, LayerMask.GetMask("personnage"), QueryTriggerInteraction.Collide));
-
-        m_pNavMeshAgent.SetDestination(tHit.point - Vector3.up);
+     if  ( Physics.Raycast(transform.position + Vector3.up, tDirection, out tHit, 300.0f, LayerMask.GetMask("personnage"), QueryTriggerInteraction.Collide));
+        {
+            Vector3 tDestination = tHit.point - Vector3.up - (m_pNavMeshAgent.radius * - tDirection/*notre largeur, vers l arriere */);
+        m_pNavMeshAgent.SetDestination(tDestination);
+        }
     }
 
     private void AnimeMarche()
