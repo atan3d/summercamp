@@ -264,6 +264,25 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &170815245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100074, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0,
+    type: 3}
+  m_PrefabInternal: {fileID: 95729755}
+--- !u!114 &170815248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 170815245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9926dfdd8ca61874dadeb135dba43cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pMaitre: {fileID: 965382744}
+  m_iDegats: 10
+  m_iAttaquesParsecondes: 2147483647
 --- !u!1 &249285704
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d4dd367785177488776baa29b37df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_pArme: {fileID: 0}
+  m_pArme: {fileID: 170815248}
   m_pAnimator: {fileID: 89324021}
   m_iHp: 100
   m_fVitesse: 8

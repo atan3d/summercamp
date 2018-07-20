@@ -20,6 +20,7 @@ public class Ennemi : Personnage
 
 
 
+
     #endregion
 
 
@@ -27,6 +28,7 @@ public class Ennemi : Personnage
 
     private void LateUpdate()
     {
+        if (m_pAnimator != null)
         AnimeMarche();
     }
 
@@ -48,7 +50,10 @@ public class Ennemi : Personnage
             return;
         MovePersonnage();
 
-         //on est sur qu on a une cible
+        //on est sur qu on a une cible
+
+        if (m_pNavMeshAgent.velocity == Vector3.zero)
+            Attaquer();
 
 
  
@@ -59,7 +64,10 @@ public class Ennemi : Personnage
 
     protected override void Attaquer()
     {
-     
+        transform.forward = (m_pCible.transform.position - transform.position).normalized;
+
+
+        base.Attaquer();
     }
 
     protected override void MovePersonnage()
@@ -77,6 +85,7 @@ public class Ennemi : Personnage
 
     private void AnimeMarche()
     {
+
         m_pAnimator.SetBool("Bouge", m_pNavMeshAgent.velocity != Vector3.zero);
     }
 

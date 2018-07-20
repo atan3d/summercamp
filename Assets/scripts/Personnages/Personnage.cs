@@ -4,7 +4,7 @@ using UnityEngine;
 abstract public class Personnage : MonoBehaviour
 {
     #region Variables (public)
-    
+
 
     public Arme m_pArme = null;
 
@@ -25,5 +25,12 @@ abstract public class Personnage : MonoBehaviour
     #endregion
 
     abstract protected void MovePersonnage();
-    abstract protected void Attaquer();
+
+    /// <summary>
+    /// lance l attaque de mon arme si elle existe
+    /// </summary>
+    virtual protected void Attaquer()
+    {
+        m_pArme?.Attaquer();
+    }
 }
